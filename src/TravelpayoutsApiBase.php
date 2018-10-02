@@ -97,10 +97,22 @@ abstract class TravelpayoutsApiBase
                 return false;
             }
         }
-
-        $paramsString = http_build_query($attributes);
+        $params = $this->array_map_recursive(function ($param) {
+            if ($param === 'false') return null;
+            return $param;
+        }, $attributes);
+        $paramsString = http_build_query($params);
         $this->_request_url = "{$this->getApiUrl()}?{$paramsString}";
         return $this->sendQuery($this->_request_url);
+    }
+
+    public function array_map_recursive($callback, $array)
+    {
+        $func = function ($item) use (&$func, &$callback) {
+            return is_array($item) ? array_map($func, $item) : call_user_func($callback, $item);
+        };
+
+        return array_map($func, $array);
     }
 
     protected function sendQuery($requestUrl)
@@ -113,7 +125,13 @@ abstract class TravelpayoutsApiBase
         curl_close($ch);
 
         if ($responseBody = json_decode($response, true)) {
-            return isset($responseBody['data']) && count($responseBody['data']) > 0 ? $responseBody['data'] : false;
+            if (isset($responseBody['data']) && count($responseBody['data']) > 0) {
+                return $responseBody['data'];
+            } else {
+                if (isset($responseBody['error']))
+                    $this->_errors[] = $responseBody['error'];
+                return false;
+            }
         }
         return false;
     }
