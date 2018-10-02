@@ -1,0 +1,165 @@
+<?php
+
+namespace Glook\TravelPayouts;
+
+use Glook\TravelPayouts\Api\TravelpayoutsApiHelp;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV1AirlineDirections;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV1CityDirections;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV1PricesCalendar;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV1PricesCheap;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV1PricesDirect;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV1PricesMonthly;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2PricesHolidaysByRoutes;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2PricesLatest;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2PricesMonthMatrix;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2PricesNearestPlacesMatrix;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2PricesSpecialOffers;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2PricesWeekMatrix;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2StatisticsBalance;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2StatisticsDetailedSales;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2StatisticsPayments;
+use Glook\TravelPayouts\Api\TravelpayoutsApiV2StatisticsSales;
+
+/**
+ * Created by: Andrey Polyakov (andrey@polyakov.im)
+ *
+ * This file is auto-generated.
+ */
+class TravelpayoutsApi
+{
+    /**
+     * @return TravelpayoutsApiV2PricesLatest
+     */
+    public function v2PricesLatest()
+    {
+        return new TravelpayoutsApiV2PricesLatest();
+    }
+
+    /**
+     * @return TravelpayoutsApiV2PricesMonthMatrix
+     */
+    public function v2PricesMonthMatrix()
+    {
+        return new TravelpayoutsApiV2PricesMonthMatrix();
+    }
+
+    /**
+     * @return TravelpayoutsApiV2PricesNearestPlacesMatrix
+     */
+    public function v2PricesNearestPlacesMatrix()
+    {
+        return new TravelpayoutsApiV2PricesNearestPlacesMatrix();
+    }
+
+    /**
+     * @return TravelpayoutsApiV2PricesSpecialOffers
+     */
+    public function v2PricesSpecialOffers()
+    {
+        return new TravelpayoutsApiV2PricesSpecialOffers();
+    }
+
+    /**
+     * @return TravelpayoutsApiV2PricesWeekMatrix
+     */
+    public function v2PricesWeekMatrix()
+    {
+        return new TravelpayoutsApiV2PricesWeekMatrix();
+    }
+
+    /**
+     * @return TravelpayoutsApiV2PricesHolidaysByRoutes
+     */
+    public function v2PricesHolidaysByRoutes()
+    {
+        return new TravelpayoutsApiV2PricesHolidaysByRoutes();
+    }
+
+    /**
+     * @return TravelpayoutsApiV2StatisticsBalance
+     */
+    public function v2StatisticsBalance()
+    {
+        return new TravelpayoutsApiV2StatisticsBalance();
+    }
+
+    /**
+     * @return TravelpayoutsApiV2StatisticsPayments
+     */
+    public function v2StatisticsPayments()
+    {
+        return new TravelpayoutsApiV2StatisticsPayments();
+    }
+
+    /**
+     * @return TravelpayoutsApiV2StatisticsSales
+     */
+    public function v2StatisticsSales()
+    {
+        return new TravelpayoutsApiV2StatisticsSales();
+    }
+
+    /**
+     * @return TravelpayoutsApiV2StatisticsDetailedSales
+     */
+    public function v2StatisticsDetailedSales()
+    {
+        return new TravelpayoutsApiV2StatisticsDetailedSales();
+    }
+
+    /**
+     * @return TravelpayoutsApiV1PricesCalendar
+     */
+    public function v1PricesCalendar()
+    {
+        return new TravelpayoutsApiV1PricesCalendar();
+    }
+
+    /**
+     * @return TravelpayoutsApiV1PricesCheap
+     */
+    public function v1PricesCheap()
+    {
+        return new TravelpayoutsApiV1PricesCheap();
+    }
+
+    /**
+     * @return TravelpayoutsApiV1PricesDirect
+     */
+    public function v1PricesDirect()
+    {
+        return new TravelpayoutsApiV1PricesDirect();
+    }
+
+    /**
+     * @return TravelpayoutsApiV1PricesMonthly
+     */
+    public function v1PricesMonthly()
+    {
+        return new TravelpayoutsApiV1PricesMonthly();
+    }
+
+    /**
+     * @return TravelpayoutsApiV1AirlineDirections
+     */
+    public function v1AirlineDirections()
+    {
+        return new TravelpayoutsApiV1AirlineDirections();
+    }
+
+    /**
+     * @return TravelpayoutsApiV1CityDirections
+     */
+    public function v1CityDirections()
+    {
+        return new TravelpayoutsApiV1CityDirections();
+    }
+
+    /**
+     * @return TravelpayoutsApiHelp
+     */
+    public function help()
+    {
+        return new TravelpayoutsApiHelp();
+    }
+}

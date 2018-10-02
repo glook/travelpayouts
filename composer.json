@@ -1,0 +1,22 @@
+{
+  "name": "Glook/TravelPayouts",
+  "authors": [
+    {
+      "name": "Andrey Polyakov",
+      "email": "andrey@polyakov.im"
+    }
+  ],
+  "require": {
+    "adbario/php-dot-notation": "^2.1",
+    "vlucas/valitron": "^1.4"
+  },
+  "require-dev": {
+    "guzzlehttp/guzzle": "^6.3",
+    "nette/php-generator": "^3.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Glook\\TravelPayouts\\": "src/"
+    }
+  }
+}
