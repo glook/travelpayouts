@@ -98,7 +98,7 @@ abstract class TravelpayoutsApiBase
             }
         }
         $params = $this->array_map_recursive(function ($param) {
-            if ($param === 'false') return null;
+            if ($param === TravelpayoutsApi::SKIP_VALUE) return null;
             return $param;
         }, $attributes);
         $paramsString = http_build_query($params);

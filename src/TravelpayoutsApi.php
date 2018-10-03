@@ -27,6 +27,8 @@ use Glook\TravelPayouts\Api\TravelpayoutsApiV2StatisticsSales;
  */
 class TravelpayoutsApi
 {
+    const SKIP_VALUE = -1;
+
     private static $_instance;
 
     public static function instance()
