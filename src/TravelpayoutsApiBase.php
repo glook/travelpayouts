@@ -76,16 +76,33 @@ abstract class TravelpayoutsApiBase
 
     public function validate()
     {
-        $rules = $this->getRules();
+        $rules = $this->getFilteredRules();
         $attributes = $this->getAttributes();
         $validator = new Validator($attributes);
-
         $validator->rules($rules);
         if (!$validator->validate()) {
             $this->_errors = $validator->errors();
             return false;
         }
         return true;
+    }
+
+    public function getFilteredRules()
+    {
+        $rules = $this->getRules();
+        $attributes = $this->getAttributes();
+        $skippedAttributes = array_filter($attributes, function ($attribute) {
+            return $attribute === TravelpayoutsApi::SKIP_VALUE;
+        });
+
+        return array_map(function ($ruleCategory) use ($skippedAttributes) {
+            return array_filter($ruleCategory, function ($fields) use ($skippedAttributes) {
+                if (isset($fields[0]))
+                    return !array_key_exists($fields[0], $skippedAttributes);
+
+                return false;
+            });
+        }, $rules);
     }
 
     public function send($run_validation = true)
